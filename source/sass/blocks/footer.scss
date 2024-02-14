@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  // background-color: ;
+  min-height: 115px;
+
+
+
+  @include vp-767 {
+    min-height: 260px;
+  }
+}
+
+.footer__intro {
+  display: flex;
+  align-items: center;
+
+  @include vp-767 {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 51px 0 55px;
+  }
+}
+
+.footer__logo {
+  justify-self: flex-start;
+  margin-right: 278px;
+
+
+  @include vp-767 {
+    margin: 0 0 -32px;
+  }
+}
+
+.footer__nav {
+  flex: 1;
+}
+
+.footer__social {
+  margin-left: 15px;
+
+  @include vp-767 {
+    margin: 0;
+  }
+
+  @include vp-767 {
+    margin: 23px 0 0 0;
+  }
+}

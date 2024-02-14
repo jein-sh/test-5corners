@@ -1,0 +1,94 @@
+.radio-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  @include vp-1239 {
+    gap: 9px;
+  }
+
+  &__btn {
+    width: 30px;
+    height: 30px;
+
+    input {
+      position: absolute;
+
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+
+      clip: rect(0 0 0 0);
+    }
+
+    .radio-group__name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      background-color: $color-white-smoke;
+      transition: background-color $trans-default, color $trans-default;
+    }
+
+    input + .radio-group__name {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-light-grey;
+      }
+    }
+
+    input:checked + .radio-group__name {
+      pointer-events: none;
+      background-color: $color-default-black;
+      color: $color-default-white;
+    }
+
+    input[disabled] + .radio-group__name {
+      pointer-events: none;
+      background-color: $color-white-smoke;
+      color: $color-light-grey;
+    }
+  }
+
+  &--color {
+    @include vp-1239 {
+      gap: 16px;
+    }
+  }
+
+  &--color &__btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    input + .radio-group__color {
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px $color-light-grey, inset 0 0 0 2px $color-default-white;
+      }
+    }
+
+    .radio-group__color {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--background-color, $color-default-black);
+      box-shadow: inset 0 0 0 2px $color-default-white;
+      transition: box-shadow $trans-default;
+    }
+
+    input:checked + .radio-group__color {
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px $color-default-black, inset 0 0 0 3px $color-default-white;
+    }
+  }
+}

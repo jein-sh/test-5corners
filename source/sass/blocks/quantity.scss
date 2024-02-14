@@ -1,0 +1,51 @@
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white-smoke;
+
+  height: 42px;
+  width: 153px;
+  padding: 5px 10px;
+
+  @include vp-767 {
+    width: 146px;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: $color-default-black;
+    cursor: pointer;
+    transition: color $trans-default;
+
+    &:hover,
+    &:focus {
+      color: $color-dim-grey;
+    }
+
+    &.disabled {
+      color: $color-light-grey;
+    }
+  }
+
+  &__amount {
+    height: 32px;
+    margin: 0 4px;
+    font-size: 16px;
+    line-height: 21px;
+
+    input {
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      color: inherit;
+      font: inherit;
+    }
+  }
+}

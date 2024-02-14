@@ -1,0 +1,20 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+
+  color: inherit;
+  transition: color $trans-default, text-decoration $trans-default;
+
+  font-size: 12px;
+  line-height: 15px;
+
+  &--light {
+    color: $color-dim-grey;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: $color-default-black;
+  }
+}

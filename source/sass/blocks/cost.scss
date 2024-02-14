@@ -1,0 +1,124 @@
+.cost {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-dim-grey;
+  padding: 30px 20px;
+
+  @include vp-767 {
+    padding: 24px 16px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 24px;
+
+    svg {
+      height: 15px;
+      width: 13px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 21px;
+      margin-bottom: 13px;
+
+      svg {
+        height: 11px;
+        width: 9px;
+      }
+    }
+
+    &--sm {
+      font-size: 16px;
+      line-height: 21px;
+      margin-top: -12px;
+
+      svg {
+        height: 12px;
+        width: 10px;
+      }
+
+      @include vp-767 {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: -5px;
+
+        svg {
+          height: 9px;
+          width: 7px;
+        }
+      }
+    }
+
+    &--l {
+      font-size: 28px;
+      line-height: 30px;
+
+      svg {
+        height: 19px;
+        width: 16px;
+      }
+
+      @include vp-767 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 8px;
+
+        svg {
+          height: 14px;
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  &__switch {
+    padding: 19px 0;
+    border-top: 1px solid $color-light-grey;
+    border-bottom: 1px solid $color-light-grey;
+    margin-bottom: 20px;
+
+    @include vp-767 {
+      margin-top: -3px;
+      margin-bottom: 14px;
+      padding: 14px 0 10px;
+    }
+
+    .switch {
+      margin-bottom: 5px;
+
+      @include vp-767 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-dim-grey;
+    margin: 0;
+  }
+
+  &__agree {
+    align-self: center;
+    text-align: center;
+    color: $color-dim-grey;
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 18px;
+
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}

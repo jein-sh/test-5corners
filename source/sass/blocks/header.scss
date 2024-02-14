@@ -1,0 +1,101 @@
+.header {
+  padding: 15px 0;
+  border-bottom: 0.5px solid $color-light-grey;
+  min-height: 72px;
+
+  @include vp-767 {
+    border-bottom: none;
+    min-height: 52px;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include vp-767 {
+      top: 12px;
+      left: 16px;
+      transform: none;
+    }
+  }
+
+  &__cart {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    @include vp-767 {
+      top: 2px;
+      right: 67px;
+      transform: none;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    flex-shrink: 0;
+    height: 40px;
+    width: 40px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    transform: translateZ(0);
+    z-index: 200;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      right: 4px;
+      width: 32px;
+      height: 1.5px;
+      background-color: $color-default-black;
+      transform: translateZ(0);
+      transition: width $trans-default, top $trans-default, transform $trans-default;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 4px;
+      top: 20px;
+      width: 18px;
+      height: 1.5px;
+      transform: translateZ(0);
+      background-color: $color-default-black;
+      transition: top $trans-default, right $trans-default, transform $trans-default;
+    }
+
+    @include vp-767 {
+      display: block;
+    }
+
+    .nav.is-open ~ & {
+      &::before {
+        top: 16px;
+        width: 18px;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 16px;
+        right: 4px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

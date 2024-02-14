@@ -1,0 +1,57 @@
+.switch {
+  input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__thumb {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 14px;
+    border-radius: 7px;
+    background: $color-light-grey;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      z-index: 1;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: $color-dim-grey;
+      transition: transform $trans-default;
+    }
+  }
+
+  input:checked + .switch__thumb::after {
+    transform: translateX(100%);
+    background: $color-default-black;
+  }
+
+  &__label {
+    font-size: 20px;
+    line-height: 24px;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+}
