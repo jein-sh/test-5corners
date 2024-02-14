@@ -2254,11 +2254,6 @@ button,
     padding: 10px 14px;
   }
 
-  .input label input {
-    min-height: 45px;
-    padding: 10px 14px;
-  }
-
   .card__param {
     margin-bottom: 5px;
   }
